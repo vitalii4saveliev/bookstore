@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:bookstore;DB_CLOSE_DELAY=-1;MODE=MYSQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    open-in-view: false
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  cache:
+    type: redis
+    redis:
+      time-to-live: 60000
+springdoc:
+  api-docs:
+    path: /api/docs/api-docs
+  swagger-ui:
+    path: /api/docs/swagger-ui-custom.html
+    operations-sorter: method
